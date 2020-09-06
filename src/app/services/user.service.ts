@@ -7,8 +7,8 @@ import {Observable, of} from 'rxjs';
 })
 export class UserService {
   constructor() { }
-
-  get User(): Observable<User> {
-    return of({id: Math.random()});
+  private user$: User = {id: Math.random()};
+  get user(): User {
+    return this.user$;
   }
 }

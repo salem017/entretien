@@ -11,6 +11,7 @@ import {CarResolver} from './cars/store/car.resolver';
 import {CarModule} from './cars/car.module';
 import {EffectsModule} from '@ngrx/effects';
 import {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 const routes = [
   {
@@ -27,6 +28,7 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
   ],
   imports: [
     CarModule,
