@@ -1,0 +1,22 @@
+
+<div>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Couleur</th>
+      <th scope="col">Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars$ | async">
+      <td>{{ car.marque }}</td>
+      <td>{{ car.couleur }}</td>
+      <td>
+        <button class="btn btn-primary" style="margin: 5px">Update</button>
+        <button class="btn btn-danger" style="margin: 5px">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
