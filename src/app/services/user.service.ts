@@ -12,7 +12,9 @@ export class UserService {
     this.user.carCreated ++;
   }
   deleteCarCreated(): void {
-    this.user.carCreated --;
+    if (this.user.carCreated > 0) {
+      this.user.carCreated --;
+    }
   }
   get user(): User {
     return this.user$;
