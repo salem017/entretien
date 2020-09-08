@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MeteoService} from '../services/meteo.service';
 
 @Component({
   selector: 'app-meteo',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meteo.component.css']
 })
 export class MeteoComponent implements OnInit {
+  degres: number;
 
-  constructor() { }
+  constructor(private meteoService: MeteoService) { }
 
   ngOnInit(): void {
+    this.meteoService.getDegres().subscribe(data => {
+      this.degres = data.list[0].main.temp;
+    });
   }
 
 }

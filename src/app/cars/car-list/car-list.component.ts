@@ -5,6 +5,7 @@ import {select, Store} from '@ngrx/store';
 import {CarAdd, CarModify, CarRemove} from '../store/car.actions';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-car-list',
@@ -17,13 +18,14 @@ export class CarListComponent implements OnInit {
   angForm: FormGroup;
   isUpdateActivated = false;
   updateCarObject: Car;
-  constructor(private store: Store<{ cars: Car[] }>,  private fb: FormBuilder, private router: Router) {
+  constructor(private store: Store<{ cars: Car[] }>,  private fb: FormBuilder, private userService: UserService) {
     this.cars = store.pipe(select('cars'));
   }
   ngOnInit(): void {
   }
   removeCar(CarIndex): void {
     this.store.dispatch(new CarRemove(CarIndex));
+    this.userService.deleteCarCreated();
   }
 
 

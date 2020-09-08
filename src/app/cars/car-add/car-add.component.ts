@@ -6,6 +6,7 @@ import {Car} from '../models/car';
 import {CarService} from '../services/car.service';
 import {CarAdd} from '../store/car.actions';
 import {Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-car-add',
@@ -15,7 +16,8 @@ import {Router} from '@angular/router';
 export class CarAddComponent implements OnInit {
 
   angForm: FormGroup;
-  constructor(private store: Store<AppState>, private fb: FormBuilder, private carService: CarService, private router: Router) {
+  constructor(private store: Store<AppState>, private fb: FormBuilder, private carService: CarService, private router: Router,
+              private userService:UserService) {
     this.createForm();
   }
 
@@ -43,6 +45,7 @@ export class CarAddComponent implements OnInit {
       marque: marque$
     };
     this.store.dispatch(new CarAdd(car));
+    this.userService.newCarCreated();
     this.router.navigate(['/cars']);
     }
 }

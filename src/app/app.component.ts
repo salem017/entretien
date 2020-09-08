@@ -14,7 +14,7 @@ import {UserService} from './services/user.service';
 
 export class AppComponent implements OnInit  {
   title = 'Vente de voitures';
-  constructor(private store: Store<AppState>, private userService:UserService) {}
+  constructor(private store: Store<AppState>, private userService: UserService) {}
   user: User;
 
   ngOnInit(): void {

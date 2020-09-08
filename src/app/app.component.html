@@ -23,20 +23,23 @@
           <a class="nav-link" [routerLink]="['/create-car']">Ajouter une voiture</a>
         </li>
       </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <app-meteo></app-meteo>
+      </div>
     </div>
   </nav>
 </header>
 
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
-  <div class="container" style="margin-top: 55px;">
+  <div class="container" style="margin-top: 60px;">
       <router-outlet></router-outlet>
   </div>
 </main>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <span class="text-muted">Vous êtes l'utilisateur {{user.id}}</span>
+    <span class="text-muted">Vous êtes l'utilisateur {{user.id}}. Vous avez créé {{user.carCreated}} voitures</span>
   </div>
 </footer>
 </body>
