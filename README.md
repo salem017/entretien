@@ -7,11 +7,15 @@ Pour lancer le projet,
 tout d'abord installez toutes les dépendances avec `npm install`.
 Ensuite lancer le projet avec `npm start` et allez sur `http://localhost:4200/`
 
-US                              Temps estimée   Temps réalisé
-Prise en main de ngrx           2h              7h
-Meteo                           30min           15min
-création d'une voiture ngrx     1h              30min
-modification d'une voiture      1h              2h
-Suppression d'une voiture       1h              30min
-Utilisateur toujours affiché    1h              1h
-Main page                       1h              1h
+
+| User Story  | Temps estimée  | Temps réalisé
+| ------------- | ------------- | ------------- |
+| Prise en main de ngrx  | 2h    |  6h | 
+| Meteo  | 30min | 15min  |
+| création d'une voiture ngrx store avec validations  | 1h   | 1h  |
+| modification d'une voiture ngrx store avec validations | 1h  | 2h  |
+| Suppression d'une voiture | 1h | 30min  |
+| Utilisateur toujours affiché | 1h | 1h  |
+| Main Page | 1h | 1h  |
+| Refacto | 30min | 1h  |
+
