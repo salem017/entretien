@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {carActionTypes} from './car.actions';
 import {CarService} from '../services/car.service';
+import {Car} from '../models/car';
 
 @Injectable()
 export class CarEffects {
