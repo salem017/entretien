@@ -4,11 +4,14 @@
     <form [formGroup]="angForm" novalidate>
       <div class="form-group">
         <label class="col-md-4">Marque de la voiture</label>
-        <input type="text" class="form-control" formControlName="marque" #marque minlength="3" maxlength="10"/>
+        <input type="text" class="form-control" formControlName="marque" #marque minlength="3" maxlength="15"/>
       </div>
       <div *ngIf="angForm.controls['marque'].invalid && (angForm.controls['marque'].dirty || angForm.controls['marque'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['marque'].errors.required">
           La marque est requise
+        </div>
+        <div *ngIf="angForm.controls['marque'].errors.minlength">
+          Il faut au minimum 3 lettres
         </div>
       </div>
       <div class="form-group">
@@ -25,11 +28,14 @@
       </div>
       <div class="form-group">
         <label class="col-md-4">Couleur de la voiture</label>
-        <input type="text" class="form-control" formControlName="couleur" #couleur minlength="3" maxlength="10"/>
+        <input type="text" class="form-control" formControlName="couleur" #couleur minlength="3" maxlength="15"/>
       </div>
       <div *ngIf="angForm.controls['couleur'].invalid && (angForm.controls['couleur'].dirty || angForm.controls['couleur'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['couleur'].errors.required">
           La couleur est requise
+        </div>
+        <div *ngIf="angForm.controls['couleur'].errors.minlength">
+          Il faut au minimum 3 lettres
         </div>
       </div>
       <div class="form-group">
@@ -43,11 +49,14 @@
       </div>
       <div class="form-group">
         <label class="col-md-4">L'état du véhicule</label>
-        <input type="text" class="form-control" formControlName="etat" #etat minlength="3" maxlength="10"/>
+        <input type="text" class="form-control" formControlName="etat" #etat minlength="3" maxlength="15"/>
       </div>
       <div *ngIf="angForm.controls['etat'].invalid && (angForm.controls['etat'].dirty || angForm.controls['etat'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['etat'].errors.required">
           L'état est requis
+        </div>
+        <div *ngIf="angForm.controls['etat'].errors.minlength">
+          Il faut au minimum 3 lettres
         </div>
       </div>
       <div class="form-group" *ngIf="car === undefined">
