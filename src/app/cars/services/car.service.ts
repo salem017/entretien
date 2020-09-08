@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CarService {
   get idLast(): number {
+    this._idLast ++;
     return this._idLast;
   }
 
