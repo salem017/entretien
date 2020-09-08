@@ -1,0 +1,54 @@
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Marque de la voiture</label>
+        <input type="text" class="form-control" formControlName="marque" #marque />
+      </div>
+      <div *ngIf="angForm.controls['marque'].invalid && (angForm.controls['marque'].dirty || angForm.controls['marque'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['marque'].errors.required">
+          La marque est requise
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Immatriculation de la voiture</label>
+        <input type="text" class="form-control" formControlName="immatriculation" #immatriculation/>
+      </div>
+      <div *ngIf="angForm.controls['immatriculation'].invalid && (angForm.controls['immatriculation'].dirty || angForm.controls['immatriculation'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['immatriculation'].errors.required">
+          L'immatriculation est requise
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Couleur de la voiture</label>
+        <input type="text" class="form-control" formControlName="couleur" #couleur/>
+      </div>
+      <div *ngIf="angForm.controls['couleur'].invalid && (angForm.controls['couleur'].dirty || angForm.controls['couleur'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['couleur'].errors.required">
+          La couleur est requise
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Date d'achat du véhicule</label>
+        <input type="date" class="form-control" formControlName="dateAchat" #dateAchat/>
+      </div>
+      <div *ngIf="angForm.controls['dateAchat'].invalid && (angForm.controls['dateAchat'].dirty || angForm.controls['dateAchat'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['dateAchat'].errors.required">
+          La date d'achat est requise
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">l'état du véhicule</label>
+        <input type="text" class="form-control" formControlName="etat" #etat/>
+      </div>
+      <div *ngIf="angForm.controls['etat'].invalid && (angForm.controls['etat'].dirty || angForm.controls['etat'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['etat'].errors.required">
+          L'état est requis
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addCar(immatriculation.value, marque.value, dateAchat.value, couleur.value, etat.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Ajouter la voiture</button>
+      </div>
+    </form>
+  </div>
+</div>

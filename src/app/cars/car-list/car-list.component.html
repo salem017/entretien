@@ -1,20 +1,23 @@
-
 <div>
-  <table class="table table-dark">
+  <table class="table">
     <thead>
     <tr>
       <th scope="col">Nom</th>
       <th scope="col">Couleur</th>
-      <th scope="col">Operations</th>
+      <th scope="col">Immatriculation</th>
+      <th scope="col">Date d'achat</th>
+      <th scope="col">Opérations</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let car of cars | async">
       <td>{{ car.marque }}</td>
       <td>{{ car.couleur }}</td>
+      <td>{{ car.immatricution }}</td>
+      <td>{{ car.dateAchat }}</td>
       <td>
-        <button class="btn btn-primary" style="margin: 5px">Update</button>
-        <button (click)="removeCar(car.id)" class="btn btn-danger" style="margin: 5px">Delete</button>
+        <button class="btn btn-primary" style="margin: 5px">Mettre à jour</button>
+        <button (click)="removeCar(car.id)" class="btn btn-danger" style="margin: 5px">Supprimer</button>
       </td>
     </tr>
     </tbody>

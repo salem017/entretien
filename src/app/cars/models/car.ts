@@ -5,5 +5,4 @@ export interface Car {
   dateAchat: string;
   couleur: string;
   etat: string;
-  coefficient: number;
 }

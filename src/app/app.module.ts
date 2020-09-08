@@ -14,13 +14,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CarService} from './cars/services/car.service';
 import {UserService} from './services/user.service';
 import { CarReducer} from './cars/store/car.reducers';
+import { ModifyCarComponent } from './modify-car/modify-car.component';
+import { MeteoComponent } from './meteo/meteo.component';
 
 const routes = [
   {
     path: 'cars',
     component: CarListComponent,
   },
-  // {path: 'create-car', component: CreateCarComponent},
+  {path: 'create-car', component: CarAddComponent},
   {path: '**', redirectTo: 'cars'}
 ];
 
@@ -30,6 +32,8 @@ const routes = [
     FooterComponent,
     CarAddComponent,
     CarListComponent,
+    ModifyCarComponent,
+    MeteoComponent,
   ],
   imports: [
     BrowserModule,
