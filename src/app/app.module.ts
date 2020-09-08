@@ -8,13 +8,11 @@ import { environment } from '../environments/environment';
 import {RouterModule} from '@angular/router';
 import {EffectsModule} from '@ngrx/effects';
 import {HttpClientModule} from '@angular/common/http';
-import { FooterComponent } from './footer/footer.component';
 import { CarAddComponent } from './cars/car-add/car-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CarService} from './cars/services/car.service';
 import {UserService} from './services/user.service';
 import { CarReducer} from './cars/store/car.reducers';
-import { ModifyCarComponent } from './modify-car/modify-car.component';
 import { MeteoComponent } from './meteo/meteo.component';
 
 const routes = [
@@ -29,10 +27,8 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     CarAddComponent,
     CarListComponent,
-    ModifyCarComponent,
     MeteoComponent,
   ],
   imports: [

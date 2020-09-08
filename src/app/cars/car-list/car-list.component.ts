@@ -21,13 +21,6 @@ export class CarListComponent implements OnInit {
     this.cars = store.pipe(select('cars'));
   }
   ngOnInit(): void {
-    this.angForm = this.fb.group({
-      immatriculation: ['', Validators.required ],
-      marque: ['', Validators.required ],
-      dateAchat: ['', Validators.required ],
-      couleur: ['', Validators.required ],
-      etat: ['', Validators.required ],
-    });
   }
   removeCar(CarIndex): void {
     this.store.dispatch(new CarRemove(CarIndex));
@@ -37,6 +30,13 @@ export class CarListComponent implements OnInit {
   updateCar(car: Car): void {
     this.isUpdateActivated = true;
     this.updateCarObject = car;
+    this.angForm = this.fb.group({
+      immatriculation: [car.immatricution, Validators.required ],
+      marque: [car.marque, Validators.required ],
+      dateAchat: [car.dateAchat, Validators.required ],
+      couleur: [car.couleur, Validators.required ],
+      etat: [car.etat, Validators.required ],
+    });
   }
 
   updateCarDone(immatriculation$, marque$, dateAchat$, couleur$, etat$, id$): void {
@@ -50,6 +50,7 @@ export class CarListComponent implements OnInit {
       marque: marque$
     };
     this.store.dispatch(new CarModify(car));
-    this.router.navigate(['/cars']);
+    this.updateCarObject = null;
+    this.isUpdateActivated = false;
   }
 }

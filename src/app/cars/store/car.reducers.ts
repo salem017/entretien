@@ -5,7 +5,12 @@ export function CarReducer(state = initialState, action: ActionEx): any[] {
     case CarActionTypes.Add:
       return [...state, action.payload];
     case CarActionTypes.Modify:
-      return [...state, action.payload];
+      const index = state.findIndex(x => x.id === action.payload.id);
+      return [
+        ...state.slice(0, index),
+        action.payload,
+        ...state.slice(index + 1)
+      ];
     case CarActionTypes.Remove:
       return [
         ...state.slice(0, action.payload),

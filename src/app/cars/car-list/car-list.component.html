@@ -6,6 +6,7 @@
       <th scope="col">Couleur</th>
       <th scope="col">Immatriculation</th>
       <th scope="col">Date d'achat</th>
+      <th scope="col">Etat</th>
       <th scope="col">Opérations</th>
     </tr>
     </thead>
@@ -15,6 +16,7 @@
       <td>{{ car.couleur }}</td>
       <td>{{ car.immatricution }}</td>
       <td>{{ car.dateAchat }}</td>
+      <td>{{ car.etat }}</td>
       <td>
         <button (click)="updateCar(car)" class="btn btn-primary" style="margin: 5px">Mettre à jour</button>
         <button (click)="removeCar(car.id)" class="btn btn-danger" style="margin: 5px">Supprimer</button>
@@ -25,7 +27,7 @@
 
   <div *ngIf="isUpdateActivated" style="margin-top: 50px; margin-left: 50px;">
     <h4>Modification d'une voiture</h4>
-    <div class="panel-body">
+    <div class="panel-body"  style="margin-top: 50px;">
       <form [formGroup]="angForm" novalidate>
         <div class="form-group">
           <label class="col-md-4">Marque de la voiture</label>
@@ -73,7 +75,7 @@
           </div>
         </div>
         <div class="form-group">
-          <button (click)="updateCarDone(immatriculation.value, marque.value, dateAchat.value, couleur.value, etat.value, updateCarObject.id)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Ajouter la voiture</button>
+          <button (click)="updateCarDone(immatriculation.value, marque.value, dateAchat.value, couleur.value, etat.value, updateCarObject.id)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Modifier la voiture</button>
         </div>
       </form>
     </div>

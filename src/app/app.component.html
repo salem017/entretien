@@ -29,9 +29,16 @@
 
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
-  <div class="container" style="margin-top: 20px;">
+  <div class="container" style="margin-top: 55px;">
       <router-outlet></router-outlet>
   </div>
 </main>
 
-<app-footer></app-footer>
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">Vous êtes l'utilisateur {{user.id}}</span>
+  </div>
+</footer>
+</body>
+
+</html>
