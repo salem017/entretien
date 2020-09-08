@@ -1,7 +1,8 @@
 import {Action} from '@ngrx/store';
 export enum CarActionTypes {
   Add = '[Car Component] Add',
-  Remove = '[Car Component] Remove'
+  Remove = '[Car Component] Remove',
+  Modify = '[Car Component] Modify'
 }
 export class ActionEx implements Action {
   readonly type;
@@ -9,6 +10,11 @@ export class ActionEx implements Action {
 }
 export class CarAdd implements ActionEx {
   readonly type = CarActionTypes.Add;
+  constructor(public payload: any) {
+  }
+}
+export class CarModify implements ActionEx {
+  readonly type = CarActionTypes.Modify;
   constructor(public payload: any) {
   }
 }
