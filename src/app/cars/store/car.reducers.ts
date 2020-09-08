@@ -1,40 +1,15 @@
-
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, on } from '@ngrx/store';
-import { carActionTypes, carsLoaded } from './car.actions';
-import {Car} from '../models/car';
-
-export interface CarState extends EntityState<Car> {
-  carsLoaded: boolean;
+import {ActionEx, CarActionTypes} from './car.actions';
+export const initialState = [];
+export function CarReducer(state = initialState, action: ActionEx): any[] {
+  switch (action.type) {
+    case CarActionTypes.Add:
+      return [...state, action.payload];
+    case CarActionTypes.Remove:
+      return [
+        ...state.slice(0, action.payload),
+        ...state.slice(action.payload + 1)
+      ];
+    default:
+      return state;
+  }
 }
-
-export const adapter: EntityAdapter<Car> = createEntityAdapter<Car>();
-
-export const initialState = adapter.getInitialState({
-  carsLoaded: false
-});
-
-export const carReducer = createReducer(
-  initialState,
-
-  on(carActionTypes.carsLoaded, (state, action) => {
-    return adapter.setAll(
-      action.cars,
-      {...state, carsLoaded: true}
-    );
-  }),
-
-  on(carActionTypes.createCar, (state, action) => {
-    return adapter.addOne(action.car, state);
-  }),
-
-  on(carActionTypes.deleteCar, (state, action) => {
-    return adapter.removeOne(action.carId, state);
-  }),
-
-  on(carActionTypes.updateCar, (state, action) => {
-    return adapter.updateOne(action.update, state);
-  })
-);
-
-export const { selectAll, selectIds } = adapter.getSelectors();

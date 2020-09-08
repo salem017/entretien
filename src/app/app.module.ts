@@ -4,22 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './store/reducers';
 import { environment } from '../environments/environment';
 import {RouterModule} from '@angular/router';
-import {CarResolver} from './cars/store/car.resolver';
-import {CarModule} from './cars/car.module';
 import {EffectsModule} from '@ngrx/effects';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { CarAddComponent } from './cars/car-add/car-add.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CarService} from './cars/services/car.service';
+import {UserService} from './services/user.service';
+import { CarReducer} from './cars/store/car.reducers';
 
 const routes = [
   {
     path: 'cars',
     component: CarListComponent,
-    resolve: {
-      cars: CarResolver
-    }
   },
   // {path: 'create-car', component: CreateCarComponent},
   {path: '**', redirectTo: 'cars'}
@@ -29,16 +28,17 @@ const routes = [
   declarations: [
     AppComponent,
     FooterComponent,
+    CarAddComponent,
+    CarListComponent,
   ],
   imports: [
-    CarModule,
     BrowserModule,
     RouterModule.forRoot(routes),
-    EffectsModule.forRoot([]),
     HttpClientModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    ReactiveFormsModule,
+    StoreModule.forRoot({cars: CarReducer}),
   ],
-  providers: [CarResolver],
+  providers: [CarService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
