@@ -24,7 +24,7 @@ export class AppComponent implements OnInit  {
       id: 0,
       couleur: 'Gris nardo',
       etat: 'comme neuf',
-      immatricution: 'XX-58A-13',
+      immatricution: 'XXX-XXX-13',
       marque: 'Fiat',
       dateAchat: '2020-09-18'};
     this.store.dispatch(new CarAdd(car));
