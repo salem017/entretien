@@ -3,25 +3,14 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
 ## Development server
+Pour lancer le projet,
+tout d'abord installez toutes les dépendances avec `npm install`.
+Ensuite lancer le projet avec `npm start` et allez sur `http://localhost:4200/`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+US                              Temps estimée   Temps réalisé
+Prise en main de ngrx           2h              6h
+Meteo                           30min           15min
+création d'une voiture ngrx     1h              30min
+modification d'une voiture      1h              2h
+Suppression d'une voiture       1h              30min
+Utilisateur toujours affiché    1h              1h
