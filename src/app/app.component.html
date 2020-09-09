@@ -8,26 +8,68 @@
 </head>
 <body class="d-flex flex-column h-100">
 <header>
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" >Listes de voitures</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/cars']">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/create-car']">Ajouter une voiture</a>
-        </li>
-      </ul>
-      <div class="form-inline my-2 my-lg-0">
-        <app-meteo></app-meteo>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Vente de voiture</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/cars']">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/create-car']">Ajouter une voiture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><app-meteo></app-meteo></a>
+
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
+
+<!--  &lt;!&ndash; Navigation &ndash;&gt;
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" >Listes de voitures</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/cars']">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/create-car']">Ajouter une voiture</a>
+          </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <app-meteo></app-meteo>
+        </div>
+      </div>
+    </div>
+  </nav>-->
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('assets/Audi_RS4_Avant_Nogaro_Selection_004.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Voiture César</h1>
+            <span class="subheading">La voiture que vous méritez</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </header>
 
 <!-- Begin page content -->

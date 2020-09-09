@@ -1,5 +1,6 @@
 <div class="panel panel-primary">
-  <h4>Ajout d'une voiture</h4>
+  <h4 *ngIf="car === undefined">Ajout d'une voiture</h4>
+  <h4 *ngIf="car !== undefined">Modification d'une voiture</h4>
   <div class="panel-body"  style="margin-top: 50px;">
     <form [formGroup]="angForm" novalidate>
       <div class="form-group">
@@ -63,7 +64,7 @@
         <button (click)="addCar(immatriculation.value, marque.value, dateAchat.value, couleur.value, etat.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Ajouter la voiture</button>
       </div>
       <div class="form-group" *ngIf="car !== undefined">
-        <button (click)="updateCarDone(immatriculation.value, marque.value, dateAchat.value, couleur.value, etat.value, this.car.id)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Ajouter la voiture</button>
+        <button (click)="updateCarDone(immatriculation.value, marque.value, dateAchat.value, couleur.value, etat.value, this.car.id)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Modifier la voiture</button>
       </div>
     </form>
   </div>
